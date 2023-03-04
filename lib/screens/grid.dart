@@ -12,21 +12,24 @@ class GridItem extends StatelessWidget {
       onTap: () {
         Navigator.pushNamed(context, 'item-screen', arguments: item);
       },
-      child: GridTile(
-          footer: Container(
-            decoration: BoxDecoration(
-                color: Colors.black, border: Border.all(color: Colors.black)),
-            child: Text(
-              item.title,
-              softWrap: true,
-              textAlign: TextAlign.center,
-              style: const TextStyle(color: Colors.white),
+      child: Container(
+        decoration: BoxDecoration(border: Border.all(width: 2)),
+        child: GridTile(
+            footer: Container(
+              decoration: BoxDecoration(
+                  color: Colors.black, border: Border.all(color: Colors.black)),
+              child: Text(
+                item.title,
+                softWrap: true,
+                textAlign: TextAlign.center,
+                style: const TextStyle(color: Colors.white),
+              ),
             ),
-          ),
-          child: Image.network(
-            item.imageUrl,
-            fit: BoxFit.scaleDown,
-          )),
+            child: Image.network(
+              item.imageUrl,
+              fit: BoxFit.scaleDown,
+            )),
+      ),
     );
   }
 }

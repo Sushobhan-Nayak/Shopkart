@@ -27,7 +27,7 @@ class _AllItemsState extends State<AllItems> {
             itemCount: items.length,
             gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                 maxCrossAxisExtent: 250,
-                childAspectRatio: 1.5,
+                childAspectRatio: 0.77,
                 crossAxisSpacing: 15,
                 mainAxisSpacing: 18),
             itemBuilder: (context, index) {

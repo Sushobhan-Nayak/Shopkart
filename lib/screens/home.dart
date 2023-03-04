@@ -3,7 +3,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ecommerece/screens/account.dart';
 import 'package:ecommerece/screens/allitems.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'categories.dart';
 import 'wishlist.dart';
@@ -17,6 +16,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int _index = 0;
+  List<String> topoffers = [
+    'https://images.samsung.com/in/smartphones/galaxy-s23-ultra/images/galaxy-s23-ultra-highlights-colors-green-back-s.jpg',
+    'https://rukminim1.flixcart.com/image/416/416/kljrvrk0/cookie-biscuit/w/1/z/fruit-biscuits-karachi-bakery-original-imagyn7dbyj7ab8r.jpeg?q=70',
+    'https://rukminim1.flixcart.com/image/832/832/xif0q/shoe/w/r/o/-original-imagka2mzcgdh3qf.jpeg?q=70',
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -116,7 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
             color: Colors.black,
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(10.0),
             child: SizedBox(
               height: 30,
               child: Marquee(
@@ -125,16 +130,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 scrollAxis: Axis.horizontal,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 blankSpace: 20.0,
-                velocity: 85.0,
-                pauseAfterRound: Duration.zero,
+                velocity: 100.0,
+                pauseAfterRound: Duration(milliseconds: 25),
                 startPadding: 10.0,
-                accelerationDuration: Duration.zero,
-                accelerationCurve: Curves.linear,
-                decelerationDuration: Duration.zero,
-                decelerationCurve: Curves.linear,
+                accelerationDuration: Duration(seconds: 3),
+                accelerationCurve: Curves.easeInOut,
+                decelerationDuration: Duration(seconds: 1),
+                decelerationCurve: Curves.easeInOut,
                 textDirection: TextDirection.rtl,
               ),
             ),
+          ),
+          SizedBox(
+            height: 10,
           ),
           SizedBox(
             height: 50,
@@ -153,15 +161,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 )),
           ),
           SizedBox(
-            height: 15,
+            height: 20,
           ),
           Padding(
-            padding: const EdgeInsets.all(15.0),
+            padding: const EdgeInsets.fromLTRB(15, 30, 15, 0),
             child: SizedBox(
               height: 30,
               child: Marquee(
                 text: '!!! TOP OFFERS !!!',
-                style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                 scrollAxis: Axis.horizontal,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 blankSpace: 20.0,
@@ -176,9 +184,30 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          Card(
-            c
-          )
+          Center(
+            child: SizedBox(
+              height: 200,
+              child: PageView.builder(
+                itemCount: 3,
+                controller: PageController(viewportFraction: 0.8),
+                onPageChanged: (int index) => setState(() => _index = index),
+                itemBuilder: (_, i) {
+                  return Transform.scale(
+                    scale: i == _index ? 1 : 0.9,
+                    child: GestureDetector(
+                      onTap: () {},
+                      child: Card(
+                        elevation: 10,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Center(child: Image.network(topoffers[i])),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ),
         ],
       ),
     );

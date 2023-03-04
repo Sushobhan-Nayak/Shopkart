@@ -1,4 +1,5 @@
 import 'package:ecommerece/model/model.dart';
+
 final List<Item> dummyItems = [
   Item(
       title: 'Samsung S23 Ultra 5G',
@@ -38,5 +39,59 @@ final List<Item> dummyItems = [
         'Color: Black',
         'Outer Material: Synthetic',
         'Closure: Lace-Ups'
+      ]),
+  Item(
+      title: 'Mi 10000 mAh Wireless Power Bank  (Black, Lithium Polymer)',
+      id: 4,
+      imageUrl:
+          'https://rukminim1.flixcart.com/image/416/416/xif0q/power-bank/m/g/c/-original-imagg5zzxpdfrdrs.jpeg?q=70',
+      ratings: 4.3,
+      cost: '2,499',
+      category: 'Electronics',
+      specifications: [
+        'No. of output ports : 2',
+        'Charging cable included',
+        'Waaranty: 6 months'
+      ]),
+  Item(
+      title: 'Mi Small 12 L Water Repellent Backpack (Red)',
+      id: 5,
+      imageUrl:
+          'https://rukminim1.flixcart.com/image/832/832/kd94uq80/backpack/m/d/p/step-out-12-liters-water-repellent-backpack-red-25742-backpack-original-imafu7y5hezsbf8d.jpeg?q=70',
+      ratings: 4.1,
+      cost: '249',
+      category: 'Fashion',
+      specifications: [
+        'Trolley support: No',
+        'With rain cover: No',
+        'Color: red',
+        'Ideal for: Men & Women'
+      ]),
+  Item(
+      title: 'AASHIRVAAD Shudh Chakki Atta  (10 kg)',
+      id: 6,
+      imageUrl:
+          'https://rukminim1.flixcart.com/image/416/416/xif0q/flour/j/n/v/-original-imagm7w8jfn29hp2.jpeg?q=70',
+      ratings: 4.5,
+      cost: '418',
+      category: 'Grocery',
+      specifications: [
+        'Type: Whole-Wheat Flour',
+        'Quantity: 10kg',
+        'Maximum shelf life: 3 months',
+        'Organic: No'
+      ]),
+  Item(
+      title: 'KARACHI BAKERY Fruit Bakery Biscuit  (400 g)',
+      id: 7,
+      imageUrl:
+          'https://rukminim1.flixcart.com/image/416/416/kljrvrk0/cookie-biscuit/w/1/z/fruit-biscuits-karachi-bakery-original-imagyn7dbyj7ab8r.jpeg?q=70',
+      ratings: 4.2,
+      cost: '131',
+      category: 'Grocery',
+      specifications: [
+        'Quantity: 400g',
+        'Base Flavors: Fruit',
+        'Food preference: Vegetarian'
       ])
 ];
